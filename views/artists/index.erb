@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <meta charset="UTF-8">
+  <title>Artist</title>
+</head>
+<body>
+  <h2>Artists:</h2>
+  <a href="/">Main page</a>
+  <ul>
+    <% artists.each do |artist| %>
+      <li>
+        <a href="/artists/<%= artist.id %>">
+          <%= artist.name %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+
+  <h3> Add a artist </h3>
+  <form method="POST" action="/artists">
+    <input type="text" name="name">
+  </form>
+</body>
+</html>
